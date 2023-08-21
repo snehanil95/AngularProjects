@@ -1,29 +1,29 @@
+<div class="py-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <span class="anchor" id="formLogin"></span>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="text-center">
-                    <h1>Login </h1>
-                    <h5>You can login here!</h5>
-                </div><br>
-                <form [formGroup]="loginForm" (ngSubmit)="logIn()"> 
-                    <div class="mb-3">
-                      <label class="form-label">Login ID</label>
-                      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" ngModel="email">
-                      <small *ngIf="!loginForm.valid">Invalid Input</small>
-
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Password</label>
-                      <input  formControlName="password"  type="password" class="form-control" id="exampleInputPassword1" ngModel="password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                   
-                  </form>
-                  <a style="color: blue; margin-top: 10px;" routerLink="/signup">New User? Click to Sign up</a>
-
-            </div>
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">City Hospital Member Login</h3>
         </div>
+        <div class="card-body">
+          <form class="form">
+            <div class="form-group">
+              <label for="uname1">Patient Name</label>
+              <input type="text" class="form-control rounded-0" [(ngModel)]="loginUserData.email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label>password</label>
+              <input type="password" class="form-control rounded-0" [(ngModel)]="loginUserData.password" name="password" required>
+            </div>
+            <button type="button" (click)="loginUser()" class="btn btn-success float-right">Login</button>
+          </form>
+        </div>
+        <!--/card-block-->
+      </div>
+      <!-- /form card login -->
     </div>
+  </div>
 </div>
