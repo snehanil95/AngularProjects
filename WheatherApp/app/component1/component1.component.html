@@ -1,0 +1,27 @@
+<div style="text-align: center; padding-top: 10%;">
+    Enter City:
+    <input type="text"  [(ngModel)]="city" name="city" >
+    
+    <button (click)="onclick()">Submit</button>
+  </div>
+  
+<div class="container">
+<div class="card text-bg-primary m-5" style="max-width: 18rem;" >
+
+    <div class="card-header text-center"><h2>{{city}}</h2>
+        <p><img src="{{iconUrl}}"></p>
+
+
+    </div>
+    <div class="card-body [style]=text.align=center">
+     
+        <p class="card-text">Summary:{{summary}}</p>
+        <p class="card-text">Temprature: {{tempreture}} °F</p>
+        <p class="card-text">Feel Like:{{feelL}} </p>
+        <p class="card-text">Pressure:{{pressure}} hpa</p>
+        <p class="card-text">Humidity:{{humidity}} %</p>
+
+
+  </div>
+  </div>
+  
