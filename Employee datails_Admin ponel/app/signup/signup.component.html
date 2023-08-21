@@ -1,0 +1,62 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>New Employee Sign Up</h1>
+                    <h5>You can Sign Up here!</h5>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                    <div class="mb-3">
+                      <label class="form-label">Email address</label>
+                      <input  formControlName="email" type="email" class="form-control" id="exampleInputEmail1"  placeholder="Email address">
+                    <div class="form-text text-danger" *ngIf="email.errors?.['required'] && (email.touched || email.dirty)">
+                        Email is required
+                    </div>
+                    <div class="form-text text-danger" *ngIf="email.errors?.['email'] ">
+                     check Email is pattern
+                  </div>
+                    
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input formControlName="name"  type="text" class="form-control" id="exampleInputEmail1"  placeholder="Name">
+                        <div class="form-text text-danger" *ngIf="name.errors?.['required'] && (name.touched || name.dirty)">
+                         Name is required
+                      </div>
+                      <div class="form-text text-danger" *ngIf="name.errors?.['minlength']">
+                        Minimum length is greater then 2 alphabets
+                     </div>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input  formControlName="mobile"  type="text" class="form-control" id="exampleInputEmail1"  placeholder="Phone">
+                        <div class="form-text text-danger" *ngIf="mobile.errors?.['required'] && mobile.touched">
+                          Phone number is required
+                      </div>
+                      <div class="form-text text-danger" *ngIf="mobile.errors?.['maxlength'] ||mobile.errors?.['minlength']">
+                        Phone number should be 10 digit
+                    </div>
+                    <div class="form-text text-danger" *ngIf="mobile.errors?.['pattern'] ">
+                      Phone number should digit
+                  </div>
+                      </div>
+                    <div class="mb-3">
+                      <label class="form-label">Password</label>
+                      <input formControlName="password"  type="password" class="form-control" id="exampleInputPassword1">
+                      <div class="form-text text-danger" *ngIf="password.errors?.['required'] && password.touched">
+                        Password is required
+                    </div>
+                    <div class="form-text text-danger" *ngIf="password.errors?.['maxlength'] || password.errors?.['minlength']">
+                     password should greater than 6 and less than 10 letters
+                  </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid" >sign up</button>
+                  </form>
+                  <a style="color: blue; margin-top: 10px;" routerLink="/login">Already User? Click to Login</a>
+
+            </div>
+        </div>
+    </div>
+</div>
