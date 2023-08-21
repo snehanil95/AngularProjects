@@ -1,0 +1,53 @@
+<div class="body">
+  <div class="container">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
+    <!-- <a class="navbar-brand d-flex" routerLink="/app">Vighnharta Hospital</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/events" routerLinkActive="active">Regular Doctors Visit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/special" routerLinkActive="active">Special Doctors Visit</a>
+      </li>
+    </ul> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" routerLink="/app">Vighnharta Hospital</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="/events">Regular Doctor Visits</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/special">Special Doctor </a>
+              </li>
+              
+            </ul>
+         
+      <ul class="navbar-nav">
+        <a class="nav-link active" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Welcome
+          to EventHub</a>
+        <a class="nav-link active" style="cursor:pointer" *ngIf="_authService.loggedIn()"
+          (click)="_authService.logoutUser()">Logout</a>
+
+      </ul>
+    <div>
+  </div>
+  
+  </div></div>
+  </nav>
+
+
+  <app-footer></app-footer>
+
+  <router-outlet></router-outlet>
